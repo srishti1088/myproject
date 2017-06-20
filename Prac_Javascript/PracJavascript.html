@@ -1,0 +1,102 @@
+<html>
+	<head><title>This is Javascript that I learned</title></head>
+	<body>
+	
+<!--All Javascript Code is placed in <script> </script> tags. Javascript is case sensitive. -->
+	<script language="javascript" type="text/javascript">
+
+	
+<!--To print anything, use document.write(), i.e document object's write function. -->
+	document.write("Hi, This is printed from the script tags, Thankyou very much!" + "<br/>");
+
+	
+	</script>
+	
+	
+<!--To read javascript code from an external file, use src in script tag to define the file location. -->
+	<script language="javascript" src="js/PracJavascript.js">
+	
+	
+<!--If the src attribute is not set, user agents must interpret the contents of the element as the script. If the src has a URI value, user agents must ignore the element's contents and retrieve the script via the URI. -->
+	document.write("Hi, This is to test if anything in Script tag with src is printed, Thankyou very much!" + "<br/>");
+	
+	</script>
+	
+	<script>
+		
+<!--To call a function, just use function name and give corresponding parameters. In this case, function is defined in external JS file -->
+	document.write("Hi, The next line is using a function defined in the external JS file for computation, Thankyou very much!" + "<br/>");
+	document.write("5+25= "+ addNums(5,25) + "<br/>");
+	
+	function changeVisibility(){
+		document.getElementById(first).style.visibility=document.formvisibility.firstPara.checked ? "visible" : "hidden";
+		return true;
+	}
+
+	</script>
+	
+<!--Events are things that happen to browser and is used to trigger portions of a program. -->
+<!-- onClick Event -->
+	Testing the onClick Event
+	<input type="text" onclick="alert('You just clicked')"></input>
+	<button type="button" onclick="alert('You just clicked')">Click Me!</button> 
+	<br>
+	
+<!-- onMouseOver and onMouseOut Event -->
+	Testing the onMouseOver and onMouseOut Event
+	<h4 id="mouseovernadout" onMouseOver="changeColor('mouseovernadout','red');" onMouseOut="changeColor('mouseovernadout','blue');">Come here and see the magic, baby!</h4>
+	<br>
+
+<!-- onBlur Event -->
+	Testing the onBlur Event
+	<input id="blur" type="text" onBlur="changeColor('blur','red');"></input>
+	<br>
+	
+<!-- onFocus Event -->
+	Testing the onFocus Event
+	<input id="focus" type="text" onFocus="changeColor('focus','green');"></input>
+	<br>
+	
+	<!--This goes on infinitely as alert messages would be popped again and again. never use onBlur and onFocus like this -->
+	<!--<input type="text" onblur="alert('You just lost focus')" onFocus="alert('You just ganied focus')"></input>-->
+	
+<!-- onChange Event -->
+	Testing the onChange Event
+	<input type="text" onChange="alert('You just typed something')"></input>
+	<br>
+	
+<!-- onSelect Event -->
+	Testing the onSelect Event
+	<input type="text" onSelect="alert('You just selected something')"></input>
+	<br>
+	
+<!-- onSubmit Event -->
+	Testing the onSubmit Event
+	<form name="form" onSubmit="alert('You just submitted something')">
+		<input type="text">
+		<input type="submit" value="Submit">
+	</form>
+	<br>
+		
+<!-- To change the property on the fly -->
+	This text would change on the fly using onMouseOver and onMouseOut
+	<h4 id="onflychange" onMouseOver="changeText('onflychange','Excited', 'red');" onMouseOut="changeText('onflychange','Bored', 'gray');">Text</h4>
+	<br>
+	
+	Selecting this text would make things visible/invisible on the fly
+	<p id="first">First Box Checked </p>
+	<p id="second">Second Box Checked </p>
+	
+	
+	<form name="formvisibility">
+		<input type="checkbox" name="firstPara" onClick="changeVisibility();">First Box<br/>
+		<input type="checkbox" name="secondPara" onClick="changeVisibility();">Second Box<br/>
+	</form>
+	
+<!--For browsers that don't have Javascript, use the <noscript> tags-->
+	<noscript>
+		<h3> This browser does not support Javascript</h3>
+	<noscript>
+	
+	</body>
+</html>
